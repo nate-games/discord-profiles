@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.type = "text/css";
-  link.href = "style.css";
+  link.href = "https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css";
   document.head.appendChild(link);
 });
