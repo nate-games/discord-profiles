@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // load css files https://stackoverflow.com/questions/574944/how-to-load-up-css-files-using-javascript
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css";
+  link.href =
+    "https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css";
   document.head.appendChild(link);
 });
