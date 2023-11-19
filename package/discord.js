@@ -1,14 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var profiles = document.querySelectorAll(".profile");
+function testScripts(input) {
+  console.log(isSuccess());
+  function isSuccess() {
+    if (input == "test") {
+      return true;
+    }
+  }
+}
 
+testScripts("test");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const profiles = document.querySelectorAll(".profile");
   profiles.forEach(function (profile) {
-    profile.style.backgroundImage =
-      "url('" + profile.getAttribute("data-image") + "')";
+    if (!profile.getAttribute("data-image")) {
+      profile.style.backgroundImage = `url('img/example.gif')`;
+    } else {
+      profile.style.backgroundImage = `url('${profile.getAttribute(
+        "data-image"
+      )}')`;
+    }
+    if (!profile.getAttribute("data-status")) {
+      profile.setAttribute("data-status", "offline");
+    }
   });
-  // load css files
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href =
-    "https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css";
-  document.head.appendChild(link);
 });

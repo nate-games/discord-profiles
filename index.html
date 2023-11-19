@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="package/style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+  <script src="package/discord.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="/"><span style="font-weight: bold">Examples</span></a>
+    </div>
+  </nav>
+
+  <main>
+    <div>
+      <h3>Profile Code Generator</h3>
+      <p>Discord Profiles recreation in JavaScript, CSS, HTML5.</p>
+      <button onclick="changeStatus()">Change status</button>
+      <br />
+      <br />
+      <div class="profile"></div>
+      <br />
+      <pre><button id="copy"></button><code class="language-html">&lt;div class="profile" data-image="img/example.gif" data-status=""&gt;&lt;/div&gt;</code></pre>
+    </div>
+  </main>
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
