@@ -39,9 +39,16 @@
     </header>
     <div>
       <h2>Dependencies</h2>
-      <pre><button id="copy"></button><code class="language-html">&lt;link rel="stylesheet" href="package/style.css" /&gt;
+      <pre><button id="copy"></button><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css" /&gt;
 &lt;!-- JavaScript needed! --&gt;
-&lt;script src="package/discord.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/discord.js"&gt;&lt;/script&gt;</code></pre>
+      <p>with npm</p>
+      <pre><button id="copy"></button><code class="language-bash">npm install discord-profiles
+# or
+yarn add discord-profiles</code></pre>
+<p>Using node_modules, <b>I recommend adding a router</b></p>
+<pre><button id="copy"></button><code class="language-html">&lt;link rel="stylesheet" href="/node_modules/discord-profiles/package/style.css" /&gt;
+&lt;script src="/node_modules/discord-profiles/package/discord.js"&gt;&lt;/script&gt;</code></pre>
       <a href="?step=2"><button class="arrow" data-type="next">Next Step</button></a>
   </main>
 
