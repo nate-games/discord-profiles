@@ -1,30 +1,67 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/gh/nate-games/copybtn@main/style.css");
 
 html,
 body {
-  max-width: 100%;
   font-family: system-ui, -apple-system;
-  background: #222;
-  color: #fff;
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 * {
   font-family: system-ui, -apple-system;
 }
 
+a {
+  color: #4ca6e9;
+  text-decoration: none;
+}
+
+ul {
+  list-style-position: inside;
+  text-align: left;
+  display: inline-block;
+}
+
+a:active {
+  text-decoration: underline;
+}
 button {
   padding: 6px 10px;
   border-radius: 3px;
+  font-size: 12px;
   border: none;
-  background-color: #fff;
+  background-color: #222;
   cursor: pointer;
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
+footer {
+  text-align: center;
+  background-color: #eee;
+  width: 100%;
+  padding: 25px 0;
+  bottom: 0;
+  position: relative;
+}
+header {
+  text-align: center;
+  background-color: #292e35;
+  color: white;
+  width: 100%;
+  padding: 50px 0;
+  position: relative;
+}
 main {
   text-align: center;
   position: relative;
+  flex: 1;
+  margin-bottom: 30px;
 }
 
 main div {
@@ -32,39 +69,29 @@ main div {
   text-align: left;
 }
 
-pre {
+footer {
+  text-align: center;
   position: relative;
 }
 
-pre:hover #copy {
-  opacity: 1;
-}
-
-pre code.hljs {
-  padding-right: 30px;
-  border-radius: 5px;
-}
-#copy {
-  opacity: 0;
-  position: absolute;
+footer div {
   display: inline-block;
-  border: #333 solid 1.5px;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 5px;
-  height: 24px;
-  width: 24px;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-image: linear-gradient(#171717, #222);
-  color: #fff;
+  text-align: left;
 }
 
-#copy:active {
-  background-image: linear-gradient(#222, #272727);
+.next {
+  padding-right: 10px;
+  background-color: #e3e3e3;
+  color: black;
 }
-pre #copy:hover {
-  border: #777 solid 1.5px;
-  background-color: #333;
+
+.next::after {
+  content: ">";
+  margin-left: 5px;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.next:hover::after {
+  transform: translateX(5px);
 }

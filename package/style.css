@@ -17,7 +17,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  transition: .2s ease;
+  transition: 75ms ease;
   color: #222;
 }
 .profile[data-status="online"]::before {

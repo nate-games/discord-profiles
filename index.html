@@ -9,27 +9,54 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
   <script src="package/discord.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <title>Discord Status</title>
+  <title>Discord Profiles | Generator</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="/favicon.ico">
 </head>
 
 <body>
+  <header>
+    <h1>Discord Profiles</h1>
+  </header>
   <main>
     <div>
-      <h3>Profile Code Generator</h3>
-      <p>Discord Profiles recreation in JavaScript, CSS, HTML5.</p>
+      <h2>Profile Code Generator</h2>
+      <p>Discord Profiles inspiration/recreation in JavaScript, CSS, HTML5.</p>
       <button onclick="changeStatus()">Change status</button>
       <br />
       <br />
       <div class="profile"></div>
       <br />
-      <pre><button id="copy"></button><code class="language-html">&lt;div class="profile" data-image="img/example.gif" data-status=""&gt;&lt;/div&gt;</code></pre>
+      <pre><button id="copy"></button><code class="language-html">&lt;div class="profile" data-image="img/example.gif" data-status="undefined"&gt;&lt;/div&gt;</code></pre>
+      <p>data-status is defined, by copying from <a href="//npmjs.org/package/copybtn">copybtn</a></p>
     </div>
+    <article>
+      <div>
+        <h1>FAQ</h2>
+          <p>Frequently asked questions</p>
+          <h2>What are ALL of the statuses?</h2>
+          <p>
+          <ul>
+            <li>offline</li>
+            <li>online</li>
+            <li>idle</li>
+            <li>do-not-disturb</li>
+          </ul>
+      </div>
+    </article>
+    <a href="//nate-games.xyz" target="_blank"><button class="next">Next</button></a>
   </main>
+  <footer>
+    <div>
+      <p><b>Discord Profiles</b><br> 2023 &copy; <a href="//github.com/nate-games">nate-games</a>
+      </p>
+    </div>
+  </footer>
   <script>
     hljs.highlightAll();
   </script>
   <script src="js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/nate-games/copybtn@main/index.js"></script>
 </body>
 
 </html>
