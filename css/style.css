@@ -10,20 +10,19 @@ body {
   font-family: system-ui, -apple-system;
   color: #000;
   min-height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
-p {
-  font-size: 12px;
-}
-
 * {
   font-family: system-ui, -apple-system;
-  font-size: 12px;
+  font-size: 11px;
+}
+
+pre {
+  max-width: 100%;
 }
 
 a {
