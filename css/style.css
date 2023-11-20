@@ -6,6 +6,7 @@ body {
   font-family: system-ui, -apple-system;
   color: #000;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -79,19 +80,67 @@ footer div {
   text-align: left;
 }
 
-.next {
-  padding-right: 10px;
+.arrow {
   background-color: #e3e3e3;
   color: black;
 }
 
-.next::after {
+.arrow[data-type="next"] {
+  padding-right: 10px;
+}
+
+.arrow[data-type="next"]::after {
   content: ">";
   margin-left: 5px;
   display: inline-block;
   transition: 0.2s ease;
 }
 
-.next:hover::after {
+.arrow[data-type="next"]:hover::after {
   transform: translateX(5px);
+}
+
+.arrow[data-type="previous"] {
+  padding-left: 10px;
+}
+
+.arrow[data-type="previous"]::before {
+  content: "<";
+  margin-right: 5px;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.arrow[data-type="previous"]:hover::before {
+  transform: translateX(-5px);
+}
+
+.card {
+  display: none;
+  position: relative;
+  color: #fff;
+  transition: 0.2s ease;
+  transform: scale(0);
+}
+
+.card div {
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  background-color: #222;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card button {
+  background-color: #373737;
+  color: white;
+}
+
+button[data-type="complete"] {
+  background-color: #aaffbc;
+  color: #016c1a;
 }

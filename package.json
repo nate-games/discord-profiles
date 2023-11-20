@@ -1,0 +1,24 @@
+{
+  "name": "discord-profiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nate-games/discord-profiles.git"
+  },
+  "keywords": [
+    "discord",
+    "status",
+    "profiles"
+  ],
+  "author": "nate-games",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nate-games/discord-profiles/issues"
+  },
+  "homepage": "https://github.com/nate-games/discord-profiles#readme"
+}
