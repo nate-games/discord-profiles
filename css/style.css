@@ -15,6 +15,7 @@ body {
 
 * {
   font-family: system-ui, -apple-system;
+  font-size: 12px;
 }
 
 a {
