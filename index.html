@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Start -->
   <link rel="stylesheet" href="package/style.css" />
-  <script src="package/discord.js"></script>
+  <script src="package/discord.js" async></script>
   <!-- End -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
@@ -23,7 +23,7 @@
 
   <div class="topnav" id="myTopnav">
     <a href="/"><b>Discord Profiles</b></a>
-    <a href="?steps">Docs</a>
+    <a href="?docs">Docs</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -41,27 +41,41 @@
       <a href="/"><button>Go back home</button></a>
     </div>
   </main>
-  <main id="steps">
+
+  <main id="docs">
     <div style="gap: 1.5rem;margin-top: 25em;  display: flex; justify-content:center; align-items: center;">
       <div style="box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4); padding: 15px 25px; border-radius: 5px; width: 150px;">
         <h3>Step 1</h3>
         <p>Installing Dependencies with npm OR jsdelivr</p>
-        <a href="/">Read</a>
+        <a href="?step=1">Read</a>
       </div>
       <div style="box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4); padding: 15px 25px; border-radius: 5px; width: 150px;">
         <h3>Step 2</h3>
-        <p>Profile generator & FAQs,
-          list of statuses
+        <p>Initiliazing Discord ProfileConfig var.
         </p>
         <a href="?step=2">Read</a>
       </div>
+      <div style="box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4); padding: 15px 25px; border-radius: 5px; width: 150px;">
+        <h3>Completion</h3>
+        <p>All profile statuses showcase & FAQs,
+          list of statuses
+        </p>
+        <a href="?complete">Read</a>
+      </div>
     </div>
   </main>
-  <main id="step_1">
+
+  <main id="home">
     <header id="header">
       <h1>Discord Profiles</h1>
       <p>Now on npmjs @ <a href="https://www.npmjs.com/package/discord-profiles">discord-profiles</a></p>
+      <a href="?docs"><button>Go to Docs</button></a>
     </header>
+    <div>
+    </div>
+  </main>
+
+  <main id="step_1">
     <div>
       <h2>Dependencies</h2>
       <pre><button id="copy"></button><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nate-games/discord-profiles@main/package/style.css" /&gt;
@@ -78,7 +92,30 @@ yarn add discord-profiles</code></pre>
     </div>
   </main>
 
-  <main id="step-2">
+  <main id="step_2">
+    <div>
+      <h2>Using config</h2>
+      <pre><button id="copy"></button><code class="language-html">&lt;script&gt;
+  var profileConfig = {
+    defaultImage: "img/example.gif" // If a image attribute is not set.
+    defaultStatus: "offline" // If a status attribute is not set.
+  }
+&lt;/script&gt;</code></pre>
+      <div id="completeCard" class="card">
+        <div>
+          <h3 style="color: #76fa92;">All steps completed! <i class="fa-solid fa-circle-check"></i></h3>
+          <p>Hey you! I would really appreciate if u Join <br> the <a href="https://discord.gg/9mJcqwZ2a5">Discord</a>
+          </p>
+          <a href="/?complete"><button>Go to complete</button></a>
+          <br>
+        </div>
+      </div>
+      <a href="/?step=1"><button class="arrow" data-type="previous">Previous Step</button></a>
+      <button data-type="complete" id="completeButton">Complete! <i class="fa-regular fa-circle-check"></i></button>
+    </div>
+  </main>
+
+  <main id="complete">
     <div>
       <h2>Profile Code Generator</h2>
       <p>Discord Profiles inspiration/recreation in JavaScript, CSS, HTML5.</p>
@@ -86,8 +123,6 @@ yarn add discord-profiles</code></pre>
       <br />
       <br />
       <div class="profile"></div>
-      <br />
-      <pre><button id="copy" onclick="generate()"></button><code class="language-html">&lt;div class="profile" data-image="img/example.gif" data-status="undefined"&gt;&lt;/div&gt;</code></pre>
     </div>
     <article>
       <div>
@@ -103,16 +138,6 @@ yarn add discord-profiles</code></pre>
           </ul>
       </div>
     </article>
-    <div id="completeCard" class="card">
-      <div>
-        <h3 style="color: #76fa92;">All steps completed! <i class="fa-solid fa-circle-check"></i></h3>
-        <p>Hey you! I would really appreciate if u Join <br> the <a href="https://discord.gg/9mJcqwZ2a5">Discord</a></p>
-        <a href="/"><button>Home</button></a>
-        <br>
-      </div>
-    </div>
-    <a href="/"><button class="arrow" data-type="previous">Previous Step</button></a>
-    <button data-type="complete" id="completeButton">Complete! <i class="fa-regular fa-circle-check"></i></button>
   </main>
   <footer>
     <div>
@@ -120,6 +145,11 @@ yarn add discord-profiles</code></pre>
       </p>
     </div>
   </footer>
+  <script>
+    var profileConfig = {
+      defaultImage: "img/example.gif",
+    }
+  </script>
   <script>
     hljs.highlightAll();
   </script>

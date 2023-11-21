@@ -1,32 +1,38 @@
-function changeStatus() {
-  const profile = document.querySelector(".profile");
-  const status = ["online", "idle", "do-not-disturb", "offline"];
-  const data = profile.getAttribute("data-status");
-  const currentIndex = status.indexOf(data);
-  const nextIndex = (currentIndex + 1) % status.length;
-  const nextStatus = status[nextIndex];
-  profile.setAttribute("data-status", nextStatus);
+// basic routing
+const home = document.getElementById("home");
+const step_1 = document.getElementById("step_1");
+const step_2 = document.getElementById("step_2");
+const complete = document.getElementById("complete");
+const error_404 = document.getElementById("404");
+const docs = document.getElementById("docs");
+
+// define routes
+
+function removeElements(param1, param2, param3, param4, param5) {
+  param1.remove();
+  param2.remove();
+  param3.remove();
+  param4.remove();
+  param5.remove();
 }
 
-function generate() {
-  const profile = document.querySelector(".profile");
-  copyText(
-    `<div class="profile" data-image="img/example.gif" data-status="${profile.getAttribute(
-      "data-status"
-    )}"></div>`
-  );
+if (location.search === "") {
+  removeElements(docs, error_404, complete, step_1, step_2);
+} else if (location.search === "?docs") {
+  removeElements(error_404, complete, step_1, step_2, home);
+} else if (location.search === "?step=1") {
+  removeElements(error_404, complete, docs, home, step_2);
+} else if (location.search === "?step=2") {
+  removeElements(error_404, complete, docs, home, step_1);
+  allowCompletion();
+} else if (location.search === "?complete") {
+  removeElements(error_404, docs, home, step_2, step_1);
+} else {
+  removeElements(docs, home, step_2, step_1, complete)
 }
 
-if (location.search === "?step=2") {
-  const step_1 = document.getElementById("step_1");
-  const step_2 = document.getElementById("step-2");
-  const e_404 = document.getElementById("404");
-  const steps = document.getElementById("steps");
-  e_404.remove();
-  step_1.remove();
-  steps.remove()
-  step_2.style.display = "block";
-  // start
+// functions
+function allowCompletion() {
   const completeButton = document.getElementById("completeButton");
   completeButton.addEventListener("click", function () {
     const completeCard = document.getElementById("completeCard");
@@ -43,31 +49,6 @@ if (location.search === "?step=2") {
       completeCard.style.transform = "scale(1)";
     }, 600);
   });
-} else if (location.search === "") {
-  const step_1 = document.getElementById("step_1");
-  const step_2 = document.getElementById("step-2");
-  const e_404 = document.getElementById("404");
-  const steps = document.getElementById("steps");
-  step_1.style.display = "inline-block";
-  steps.remove()
-  e_404.remove();
-  step_2.remove();
-} else if (location.search === "?steps") {
-  const step_1 = document.getElementById("step_1");
-  const step_2 = document.getElementById("step-2");
-  const e_404 = document.getElementById("404");
-  const steps = document.getElementById("steps");
-  steps.style.display = "inline-block";
-  e_404.remove();
-  step_2.remove();
-  step_1.remove()
-} else {
-  const step_1 = document.getElementById("step_1");
-  const step_2 = document.getElementById("step-2");
-  const steps = document.getElementById("steps");
-  steps.remove()
-  step_2.remove();
-  step_1.remove();
 }
 
 function myFunction() {
@@ -77,4 +58,14 @@ function myFunction() {
   } else {
     x.className = "topnav";
   }
+}
+
+function changeStatus() {
+  const profile = document.querySelector(".profile");
+  const status = ["online", "idle", "do-not-disturb", "offline"];
+  const data = profile.getAttribute("data-status");
+  const currentIndex = status.indexOf(data);
+  const nextIndex = (currentIndex + 1) % status.length;
+  const nextStatus = status[nextIndex];
+  profile.setAttribute("data-status", nextStatus);
 }
